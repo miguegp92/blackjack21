@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>21 Blackjack</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="js/jquery/jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <link href="js/jquery/jquery-ui.theme.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery-ui.js" type="text/javascript"></script>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <script src="js/codigo.js" type="text/javascript"></script>
+    </head>
+    <body onload="crearMazo()">
+        <form>
+
+            <label for="puntosJugador">Jugador</label>
+            <input type="text"  id="puntosJugador" readonly/>
+            <label for="puntosMaquina">Croupier</label>
+            <input type="text"  id="puntosMaquina" readonly/>
+            <input type="button" value="Instrucciones" id="instrucciones"/>
+            <input type="button" value="Nuevo Juego" id="button3"  onclick="reiniciar()"/>
+        </form>
+
+        <div id="tabs" title="Instrucciones">
+            <ul>
+                <li><a href="#fragment-1">Explicación</a></li>
+                <li><a href="#fragment-2">Valores</a></li>
+                <li><a href="#fragment-3">Reglas</a></li>
+            </ul>
+            <div id="fragment-1">
+                <p>Para poder empezar a jugar, deberemos de iniciar la apuesta.</p>
+                <p>Una vez iniciado el juego, se repartirá 4 cartas, 2 al jugador y 2 para la máquina, de las cuales
+                    una quedará bocabajo, para que el jugador no sepa los puntos de la máquina.</p>
+                <p>El jugador puede ir pidiendo cartas, hasta que desee plantarse, o se pase.</p>
+                <p>Una vez que nos plantemos, empieza a jugar la máquina.</p>
+                <p>La máquina irá sacando cartas hasta superar la puntuación del jugador, o hasta que la probabilidad de ganar sea mayor de 80%.</p>
+            </div>
+            <div id="fragment-2">
+                <p>Las valores son las siguientes: </p>
+                <ul>
+                    <li>Las cartas J,Q y K tienen un valor de 10.</li>
+                    <li>Los ases tienen un valor inicial de 11, en el caso de que sumemos un total de 15, todas los Ases 
+                        que se obtengan a partir de ese momento valdrán 1.</li>
+                    <li>El valor de las demás cartas corresponde al número de carta.</li>
+                </ul>
+            </div>
+            <div id="fragment-3">
+                <ol>
+                    <li>La apuesta inicial será de 200. </li>
+                    <li>Al pulsar "Nuevo Juego" se reiniciará la partida.</li>
+                    <li>Si el jugador obtiene una puntuación de 21 al inicio, automáticamente gana la partida.</li>
+                    <li>En caso de empate entre la máquina y el jugador, gana la máquina.</li> 
+                    <li>En el caso de que el jugador se pase de 21, perderá automáticamente.</li>
+                    <li>Si el jugador gana, la apuesta se paga 2 a 1.</li>
+                    <li>En caso de Black Jack, la apuesta se paga 3 a 1.</li>
+                </ol>
+            </div>
+        </div> 
+
+        <div id="mesa">
+            <div id="cartasMaquina"></div>
+            <div id="cartasJugador"></div>
+        </div> 
+
+
+
+        <div id="limpiar">
+            <form id="acciones">
+                <input type="button" id="boton" value="Empezar" onclick="barajar()"/>
+                <input type="button" value="Pedir carta" id="button" onclick="otraCarta()"/>
+                <input type="button" value="Me planto" id="button2"  onclick="plantar()"/>
+                <label for="numero">Apostar</label>
+                <input type="button" id="subir" value="+" onclick="apostar(this)"/>
+                <input type="text"  id="numero" readonly/>
+                <input type="button" id="bajar" value="-" onclick="apostar(this)"/>
+                <label for="total">Total</label>
+                <input type="text"  id="total" readonly/>
+
+            </form>  
+        </div>
+    </body>
+</html>

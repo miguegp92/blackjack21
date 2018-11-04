@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-nov-2016, 17:29:12
+    Author     : Miguel Angel
+*/
+body{
+    background-image: url("../cartas/fondo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 80%;
+    margin: auto;
+    font-family: arial;
+}
+
+form#acciones{
+    text-align: center;
+    background-image: url("../cartas/barra.png");
+    border-radius: 10px;
+    border: 2px solid #9e4125;
+    clear: both;
+}
+
+#acciones input[type=button]{
+    background-color: #9e4108;
+}
+
+
+form label, #apuestas{
+    font-size: 30px;
+    margin-left: 30px;
+}
+div#puntos, input#instrucciones{
+    float: left;
+}
+div#limpiar{
+    clear: both;
+    width: 80%;
+    margin: auto auto;
+}
+
+form input#instrucciones, input#button3{
+    float: right;
+}
+#cartasMaquina, #cartasJugador{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    float: left;
+    height: 220px;
+}
+
+
+div#cartasMaquina img, div#cartasJugador img{
+    width: 140px;
+    height: 195px;
+}
+
+div#cartasMaquina input, div#cartasJugador input{
+    margin-bottom: 50px;
+}
+
+div input, input{
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: Arial;
+    text-align: right;
+    border-style: outset;
+}
+
+input[type=text]{
+    width: 60px;
+    height: 35px;
+    text-align: center;
+}
